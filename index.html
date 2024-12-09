@@ -4,27 +4,32 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Cooper Jakubke Portfolio</title>
-    <link rel="stylesheet" href="styles.css">
+    <!-- <link rel="stylesheet" href="styles.css"> -->
+    <link href="output.css" rel="stylesheet">
 </head>
 <body>
-    <header>
-        <h1>Welcome to My Portfolio</h1>
-        <nav>
-            <a href="#about">About</a>
-            <a href="#projects">Projects</a>
-            <a href="#contact">Contact</a>
-        </nav>
-    </header>
+    <header class="bg-oxford-blue text-white py-4 h-screen">
+        <div class="flex justify-center items-center h-screen">
+            <div class="container mx-auto flex justify-between items-center">
+                <h1 class="text-7xl font-semibold animate-slide-in">Hi, Ich bin <br> Cooper Jakubke</h1>
+                <nav>
+                    <a href="#about" class="text-lg hover:text-steel-blue px-3">Über mich</a>
+                    <a href="#projects" class="text-lg hover:text-steel-blue px-3">Projekte</a>
+                    <a href="#contact" class="text-lg hover:text-steel-blue px-3">Kontakt</a>
+                </nav>
+            </div>
+        </div>
+     </header>
     <section id="about">
-        <h2>About Me</h2>
+        <h1>Über mich</h1>
         <p>Hi, I'm Cooper Jakubke, a passionate developer...</p>
     </section>
     <section id="projects">
-        <h2>Projects</h2>
+        <h1>Projekte</h1>
         <p>Check out some of my work below:</p>
     </section>
-    <footer>
-        <p>&copy; 2024 Cooper Jakubke</p>
-    </footer>
+    <footer class="bg-gray-800 text-white py-4 text-center">
+        <p>&copy; 2024 Cooper Jakubke. All rights reserved.</p>
+     </footer>
 </body>
 </html>
