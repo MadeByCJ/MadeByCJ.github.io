@@ -11,27 +11,12 @@
     <header class="bg-oxford-blue text-white py-4 h-screen">
         <div class="flex justify-center items-center h-screen">
             <div class="container mx-auto flex justify-between items-center">
-                <!-- <h1 class="text-7xl font-semibold animate-slide-in">Hi, Ich bin <br> Cooper Jakubke</h1> -->
-                <h1 className="flex items-center text-6xl font-medium text-neutral-400">
-                    Hi, ich bin <br>
-                    <span className="relative ml-3 h-[1em] w-36 overflow-hidden">
-                      <span
-                        className="absolute h-full w-full -translate-y-full animate-slide leading-none text-white"
-                      >
-                        Cooper Jakubke
-                      </span>
-                      <span
-                        className="absolute h-full w-full -translate-y-full animate-slide leading-none text-white [animation-delay:0.83s]"
-                      >
-                        Web Entwickler
-                      </span>
-                      <span
-                        className="absolute h-full w-full -translate-y-full animate-slide leading-none text-white [animation-delay:1.83s]"
-                      >
-                        Programmierer
-                      </span>
-                    </span>
-                  </h1>
+
+                <h1 class="text-7xl font-semibold animate-slide-in">
+                    Hi, Ich bin <br>
+                    <span id="dynamic-text" class="text-amber-500">Cooper Jakubke</span>
+                </h1>
+
                 <nav>
                     <a href="#about" class="text-lg hover:text-steel-blue px-3">Über mich</a>
                     <a href="#projects" class="text-lg hover:text-steel-blue px-3">Projekte</a>
@@ -42,15 +27,28 @@
      </header>
     <section id="about">
         <h1>Über mich</h1>
-        <p>Hi, I'm Cooper Jakubke, a passionate developer...</p>
+        <p>Infos zu mir</p>
     </section>
     <section id="projects">
         <h1>Projekte</h1>
-        <p>Check out some of my work below:</p>
-        <div data-iframe-width="250" data-iframe-height="270" data-share-badge-id="bd7019ea-e79b-42d6-9ddd-bb71e051c6ae" data-share-badge-host="https://www.credly.com"></div><script type="text/javascript" async src="//cdn.credly.com/assets/utilities/embed.js"></script>
+        <p>Schau dir an was ich so mache:</p>
+        <!-- <div data-iframe-width="250" data-iframe-height="270" data-share-badge-id="bd7019ea-e79b-42d6-9ddd-bb71e051c6ae" data-share-badge-host="https://www.credly.com"></div><script type="text/javascript" async src="//cdn.credly.com/assets/utilities/embed.js"></script> -->
     </section>
     <footer class="bg-gray-800 text-white py-4 text-center">
         <p>&copy; 2024 Cooper Jakubke. All rights reserved.</p>
      </footer>
+     <script>
+        document.addEventListener('DOMContentLoaded', () => {
+          const textElement = document.getElementById('dynamic-text');
+          const words = ['Cooper Jakubke', 'Programmierer', 'Entwickler', 'Designer'];
+          let index = 0;
+      
+          setInterval(() => {
+            index = (index + 1) % words.length; // Zyklisch durch die Wörter
+            textElement.textContent = words[index];
+          }, 3000); // Wechsel alle 3 Sekunden
+        });
+      </script>
+      
 </body>
 </html>

@@ -4,8 +4,9 @@ module.exports = {
   theme: {
     extend: {
       animation: {
+        'slide-modern': 'slideInOut 1s ease-in-out',
         'slide-in': 'slideIn 1s ease-out forwards', // Definiert die Animation
-        slide: 'slide 2.5s linear infinite',
+        slide: 'slide 5s ease-in-out infinite',
       },
       keyframes: {
         slideIn: {
@@ -18,14 +19,17 @@ module.exports = {
             opacity: '1',
           },
         },
+        slideInOut: {
+          '0%': { transform: 'translateY(100%)' }, // Start außerhalb des Sichtbereichs
+          '50%': { transform: 'translateY(0)' }, // Position in der Mitte
+          '100%': { transform: 'translateY(-100%)' }, // Verlassen des Sichtbereichs
+        },
         slide: {
-          "0%": { transform: "translateY(100%)", opacity: 0.1 },
-          "15%": { transform: "translateY(0)", opacity: 1 },
-          "30%": { transform: "translateY(0)", opacity: 1 },
-          "45%": { transform: "translateY(-100%)", opacity: 1 },
-          "100%": { transform: "translateY(-100%)", opacity: 0.1 },
-        }
-      },
+          '0%, 20%': { opacity: 1, transform: 'translateY(0)' },
+          '40%, 80%': { opacity: 0, transform: 'translateY(-20px)' },
+          '100%': { opacity: 1, transform: 'translateY(0)' },
+        },
+        },
       colors:{
         'oxford-blue': '#011638',
         'steel-blue': '#3E7CB1',
@@ -35,5 +39,4 @@ module.exports = {
     },
   },
   plugins: [],
-}
-
+};
