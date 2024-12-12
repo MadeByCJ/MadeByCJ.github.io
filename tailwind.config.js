@@ -5,6 +5,7 @@ module.exports = {
     extend: {
       animation: {
         'slide-in': 'slideIn 1s ease-out forwards', // Definiert die Animation
+        slide: 'slide 2.5s linear infinite',
       },
       keyframes: {
         slideIn: {
@@ -17,6 +18,13 @@ module.exports = {
             opacity: '1',
           },
         },
+        slide: {
+          "0%": { transform: "translateY(100%)", opacity: 0.1 },
+          "15%": { transform: "translateY(0)", opacity: 1 },
+          "30%": { transform: "translateY(0)", opacity: 1 },
+          "45%": { transform: "translateY(-100%)", opacity: 1 },
+          "100%": { transform: "translateY(-100%)", opacity: 0.1 },
+        }
       },
       colors:{
         'oxford-blue': '#011638',

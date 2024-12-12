@@ -11,7 +11,27 @@
     <header class="bg-oxford-blue text-white py-4 h-screen">
         <div class="flex justify-center items-center h-screen">
             <div class="container mx-auto flex justify-between items-center">
-                <h1 class="text-7xl font-semibold animate-slide-in">Hi, Ich bin <br> Cooper Jakubke</h1>
+                <!-- <h1 class="text-7xl font-semibold animate-slide-in">Hi, Ich bin <br> Cooper Jakubke</h1> -->
+                <h1 className="flex items-center text-6xl font-medium text-neutral-400">
+                    Hi, ich bin <br>
+                    <span className="relative ml-3 h-[1em] w-36 overflow-hidden">
+                      <span
+                        className="absolute h-full w-full -translate-y-full animate-slide leading-none text-white"
+                      >
+                        Cooper Jakubke
+                      </span>
+                      <span
+                        className="absolute h-full w-full -translate-y-full animate-slide leading-none text-white [animation-delay:0.83s]"
+                      >
+                        Web Entwickler
+                      </span>
+                      <span
+                        className="absolute h-full w-full -translate-y-full animate-slide leading-none text-white [animation-delay:1.83s]"
+                      >
+                        Programmierer
+                      </span>
+                    </span>
+                  </h1>
                 <nav>
                     <a href="#about" class="text-lg hover:text-steel-blue px-3">Über mich</a>
                     <a href="#projects" class="text-lg hover:text-steel-blue px-3">Projekte</a>
