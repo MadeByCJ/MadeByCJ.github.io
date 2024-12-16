@@ -7,17 +7,17 @@
     <!-- <link rel="stylesheet" href="styles.css"> -->
     <link href="./output.css" rel="stylesheet">
 </head>
-<body>
-    <header class="bg-oxford-blue text-white py-4 h-screen">
+<body class="bg-gradient-to-tr from-oxford-blue from-30% via-indigo-600 to-steel-blue">
+    <header class="py-4 h-screen">
         <div class="flex justify-center items-center h-screen">
             <div class="absolute top-5 left-12">
                 <img src="LogoNoBackground.png" width="100" height="100">
             </div>
             <div class="container mx-auto flex justify-between items-center">
 
-                <h1 class="text-7xl font-semibold animate-slide-in">
+                <h1 class="text-7xl font-semibold animate-slide-in text-white">
                     Hi, Ich bin <br>
-                    <span id="dynamic-text" class="text-safety-orange">Cooper Jakubke</span>
+                    <span id="dynamic-text" class="text-safety-orange subpixel-antialiased">Cooper Jakubke</span>
                 </h1>
 
                 <nav>
@@ -25,22 +25,22 @@
                     <!-- <button class="bg-steel-blue hover:bg-blue-400 text-white font-bold py-2 px-4 border-b-4 border-blue-700 hover:border-blue-500 rounded">Über mich</button> -->
                     <!-- <a href="#projects" class="text-lg hover:text-steel-blue px-3">Projekte</a> -->
                     <!-- <a href="#contact" class="text-lg hover:text-steel-blue px-3">Kontakt</a> -->
-                    <button class="font-semibold rounded-md bg-gradient-to-tr from-slate-900 to-slate-800 py-3 px-5 border-b-4 border-steel-blue hover:border-blue-300 rounded text-center text-sm text-white transition-all shadow-md hover:shadow-lg focus:bg-slate-700 focus:shadow-none active:bg-slate-700 hover:bg-slate-700 active:shadow-none disabled:pointer-events-none disabled:opacity-50 disabled:shadow-none" type="button">
+                    <button class="transform translate-y-10 opacity-0 duration-500 mx-2 delay-100 hover:-translate-y-1 hover:scale-110 font-semibold rounded-md bg-gradient-to-tr from-slate-900 to-slate-800 py-3 px-5 border-b-4 border-steel-blue hover:border-blue-300 rounded text-center text-sm text-white transition-all shadow-md hover:shadow-lg focus:bg-slate-700 focus:shadow-none active:bg-slate-700 hover:bg-slate-700 active:shadow-none disabled:pointer-events-none disabled:opacity-50 disabled:shadow-none" type="button">
                         Über mich
                       </button>
                       
-                      <button class="font-semibold rounded-md bg-gradient-to-tr from-slate-900 to-slate-800 py-3 px-5 border-b-4 border-steel-blue hover:border-blue-300 rounded text-center text-sm text-white transition-all shadow-md hover:shadow-lg focus:bg-slate-700 focus:shadow-none active:bg-slate-700 hover:bg-slate-700 active:shadow-none disabled:pointer-events-none disabled:opacity-50 disabled:shadow-none" type="button">
+                      <button class="transform translate-y-10 opacity-0 duration-500 mx-2 delay-100 hover:-translate-y-1 hover:scale-110 font-semibold rounded-md bg-gradient-to-tr from-slate-900 to-slate-800 py-3 px-5 border-b-4 border-steel-blue hover:border-blue-300 rounded text-center text-sm text-white transition-all shadow-md hover:shadow-lg focus:bg-slate-700 focus:shadow-none active:bg-slate-700 hover:bg-slate-700 active:shadow-none disabled:pointer-events-none disabled:opacity-50 disabled:shadow-none" type="button">
                         Projekte
                       </button>
 
-                      <button class="font-semibold rounded-md bg-gradient-to-tr from-slate-900 to-slate-800 py-3 px-5 border-b-4 border-steel-blue hover:border-blue-300 rounded text-center text-sm text-white transition-all shadow-md hover:shadow-lg focus:bg-slate-700 focus:shadow-none active:bg-slate-700 hover:bg-slate-700 active:shadow-none disabled:pointer-events-none disabled:opacity-50 disabled:shadow-none" type="button">
+                      <button class="transform translate-y-10 opacity-0 duration-500 mx-2 delay-100 hover:-translate-y-1 hover:scale-110 font-semibold rounded-md bg-gradient-to-tr from-slate-900 to-slate-800 py-3 px-5 border-b-4 border-steel-blue hover:border-blue-300 rounded text-center text-sm text-white transition-all shadow-md hover:shadow-lg focus:bg-slate-700 focus:shadow-none active:bg-slate-700 hover:bg-slate-700 active:shadow-none disabled:pointer-events-none disabled:opacity-50 disabled:shadow-none" type="button">
                         Kontakt
                       </button>
                 </nav>
             </div>
         </div>
      </header>
-    <div class="text-white bg-oxford-blue">
+    <div class="text-white">
         <div class="container mx-auto px-4">
             <section id="about">
                 <h1 class="text-6xl font-semibold">Über mich</h1>
@@ -51,6 +51,7 @@
                 <h1 class="text-6xl font-semibold">Projekte</h1>
                 <h2 class="text-2xl">Spieleentwicklung:</h2>
                 <h3 class="text-xl">Theos</h3>
+                <!-- <img src="Theos_Title3_Zugeschnitten.png" width="800"> -->
                 <p>Infos zu Theos</p>
             </section>
         </div>
@@ -63,11 +64,20 @@
           const textElement = document.getElementById('dynamic-text');
           const words = ['Cooper Jakubke', 'Programmierer', 'Entwickler', 'Designer'];
           let index = 0;
+
+          const buttons = document.querySelectorAll('nav button');
       
           setInterval(() => {
             index = (index + 1) % words.length; // Zyklisch durch die Wörter
             textElement.textContent = words[index];
           }, 3000); // Wechsel alle 3 Sekunden
+
+          buttons.forEach((button, index) => {
+            setTimeout(() => {
+                button.classList.add('-translate-y-0', 'opacity-100');
+                button.classList.remove('translate-y-10', 'opacity-0');
+            }, index * 400);
+          });
         });
       </script>
       
