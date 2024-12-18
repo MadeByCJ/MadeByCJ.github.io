@@ -9,6 +9,39 @@
 </head>
 <body class="bg-gradient-to-tr from-oxford-blue from-30% via-indigo-600 to-steel-blue">
     <header class="py-4 h-screen">
+        <!-- <style>
+            .logo {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            animation: logoAnimation 3s forwards;
+        }
+
+        @keyframes logoAnimation {
+            0% {
+                transform: translate(-50%, -50%) scale(10);
+            }
+            100% {
+                top: 40px;
+                left: 40px;
+                transform: translate(0, 0) scale(2);
+            }
+        }
+        </style> -->
+        <style>
+          canvas {
+          position: absolute;
+          top: 0;
+          left: 0;
+          width: 100%;
+          height: 100%;
+          z-index: -1; /* Hintergrund */
+          }
+          /* body{
+            cursor: url('./glowing-cursor-2.png'), auto;
+          } */
+        </style>
         <div class="flex justify-center items-center h-screen">
             <div class="absolute top-5 left-12">
                 <img src="LogoNoBackground.png" width="100" height="100">
@@ -17,14 +50,11 @@
 
                 <h1 class="text-7xl font-semibold animate-slide-in text-white">
                     Hi, Ich bin <br>
-                    <span id="dynamic-text" class="text-safety-orange subpixel-antialiased">Cooper Jakubke</span>
+                    <!-- <span id="dynamic-text" class="text-safety-orange subpixel-antialiased">Cooper Jakubke</span> -->
+                    <span id="typewriter" class="text-safety-orange subpixel-antialiased"></span>
                 </h1>
 
                 <nav>
-                    <!-- <a href="#about" class="text-lg hover:text-steel-blue px-3">Über mich</a> -->
-                    <!-- <button class="bg-steel-blue hover:bg-blue-400 text-white font-bold py-2 px-4 border-b-4 border-blue-700 hover:border-blue-500 rounded">Über mich</button> -->
-                    <!-- <a href="#projects" class="text-lg hover:text-steel-blue px-3">Projekte</a> -->
-                    <!-- <a href="#contact" class="text-lg hover:text-steel-blue px-3">Kontakt</a> -->
                     <button class="transform translate-y-10 opacity-0 duration-500 mx-2 delay-100 hover:-translate-y-1 hover:scale-110 font-semibold rounded-md bg-gradient-to-tr from-slate-900 to-slate-800 py-3 px-5 border-b-4 border-steel-blue hover:border-blue-300 rounded text-center text-sm text-white transition-all shadow-md hover:shadow-lg focus:bg-slate-700 focus:shadow-none active:bg-slate-700 hover:bg-slate-700 active:shadow-none disabled:pointer-events-none disabled:opacity-50 disabled:shadow-none" type="button">
                         Über mich
                       </button>
@@ -38,6 +68,7 @@
                       </button>
                 </nav>
             </div>
+            <!-- <img src="LogoNoBackground.png" alt="" class="absolute top-50% left-50% delay-2000"> -->
         </div>
      </header>
     <div class="text-white">
@@ -60,6 +91,7 @@
         <p>&copy; 2024 Cooper Jakubke. All rights reserved.</p>
      </footer>
      <script>
+        document.activeElement?.blur(); // Entfernt den Fokus vom aktiven Element
         document.addEventListener('DOMContentLoaded', () => {
           const textElement = document.getElementById('dynamic-text');
           const words = ['Cooper Jakubke', 'Programmierer', 'Entwickler', 'Designer'];
@@ -79,7 +111,42 @@
             }, index * 400);
           });
         });
+
+        const words = ['Cooper Jakubke', 'Programmierer', 'Entwickler', 'Designer'];
+        let i = 0;
+        let j = 0;
+        let currentWord = "";
+        let isDeleting = false;
+
+        function type() {
+          currentWord = words[i];
+          if (isDeleting) {
+            document.getElementById("typewriter").textContent = currentWord.substring(0, j-1);
+            j--;
+            if (j == 0) {
+              isDeleting = false;
+              i++;
+              if (i == words.length) {
+                i = 0;
+              }
+            }
+          } else {
+            document.getElementById("typewriter").textContent = currentWord.substring(0, j+1);
+            j++;
+            if (j == currentWord.length) {
+              isDeleting = true;
+              setTimeout(type, 2000);
+              return;
+            }
+          }
+          setTimeout(type, 150);
+        }
+
+        type();
       </script>
+    <script type="module" src="./three.js">
+
+    </script>
       
 </body>
 </html>
