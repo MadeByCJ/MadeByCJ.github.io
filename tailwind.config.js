@@ -6,6 +6,7 @@ module.exports = {
       animation: {
         'slide-modern': 'slideInOut 1s ease-in-out',
         'slide-in': 'slideIn 1s ease-out forwards', // Definiert die Animation
+        'slide-up': 'slideUp 1s ease-out forwards',
         slide: 'slide 5s ease-in-out infinite',
       },
       keyframes: {
@@ -16,6 +17,16 @@ module.exports = {
           },
           '100%': {
             transform: 'translateX(0)', // Endet an seiner ursprünglichen Position
+            opacity: '1',
+          },
+        },
+        slideUp: {
+          '0%': {
+            transform: 'translateY(+30%)',
+            opacity: '0',
+          },
+          '100%': {
+            transform: 'translateY(0%)',
             opacity: '1',
           },
         },

@@ -6,29 +6,14 @@
     <title>Cooper Jakubke Portfolio</title>
     <!-- <link rel="stylesheet" href="styles.css"> -->
     <link href="./output.css" rel="stylesheet">
+    <style>
+      html {
+        scroll-behavior: smooth;
+      }
+    </style>
 </head>
-<body class="bg-gradient-to-tr from-oxford-blue from-30% via-indigo-600 to-steel-blue">
-    <header class="py-4 h-screen">
-        <!-- <style>
-            .logo {
-            position: absolute;
-            top: 50%;
-            left: 50%;
-            transform: translate(-50%, -50%);
-            animation: logoAnimation 3s forwards;
-        }
-
-        @keyframes logoAnimation {
-            0% {
-                transform: translate(-50%, -50%) scale(10);
-            }
-            100% {
-                top: 40px;
-                left: 40px;
-                transform: translate(0, 0) scale(2);
-            }
-        }
-        </style> -->
+<body class="bg-gradient-to-tr from-oxford-blue from-30% via-indigo-600 to-steel-blue relative">
+    <header class="py-4 h-screen relative">
         <style>
           canvas {
           position: absolute;
@@ -38,9 +23,6 @@
           height: 100%;
           z-index: -1; /* Hintergrund */
           }
-          /* body{
-            cursor: url('./glowing-cursor-2.png'), auto;
-          } */
         </style>
         <div class="flex justify-center items-center h-screen">
             <div class="absolute top-5 left-12">
@@ -50,16 +32,15 @@
 
                 <h1 class="text-7xl font-semibold animate-slide-in text-white">
                     Hi, Ich bin <br>
-                    <!-- <span id="dynamic-text" class="text-safety-orange subpixel-antialiased">Cooper Jakubke</span> -->
                     <span id="typewriter" class="text-safety-orange subpixel-antialiased"></span>
                 </h1>
 
                 <nav>
-                    <button class="transform translate-y-10 opacity-0 duration-500 mx-2 delay-100 hover:-translate-y-1 hover:scale-110 font-semibold rounded-md bg-gradient-to-tr from-slate-900 to-slate-800 py-3 px-5 border-b-4 border-steel-blue hover:border-blue-300 rounded text-center text-sm text-white transition-all shadow-md hover:shadow-lg focus:bg-slate-700 focus:shadow-none active:bg-slate-700 hover:bg-slate-700 active:shadow-none disabled:pointer-events-none disabled:opacity-50 disabled:shadow-none" type="button">
+                    <button onclick="document.getElementById('about').scrollIntoView({behavior: 'smooth'})" class="transform translate-y-10 opacity-0 duration-500 mx-2 delay-100 hover:-translate-y-1 hover:scale-110 font-semibold rounded-md bg-gradient-to-tr from-slate-900 to-slate-800 py-3 px-5 border-b-4 border-steel-blue hover:border-blue-300 rounded text-center text-sm text-white transition-all shadow-md hover:shadow-lg focus:bg-slate-700 focus:shadow-none active:bg-slate-700 hover:bg-slate-700 active:shadow-none disabled:pointer-events-none disabled:opacity-50 disabled:shadow-none" type="button">
                         Über mich
                       </button>
                       
-                      <button class="transform translate-y-10 opacity-0 duration-500 mx-2 delay-100 hover:-translate-y-1 hover:scale-110 font-semibold rounded-md bg-gradient-to-tr from-slate-900 to-slate-800 py-3 px-5 border-b-4 border-steel-blue hover:border-blue-300 rounded text-center text-sm text-white transition-all shadow-md hover:shadow-lg focus:bg-slate-700 focus:shadow-none active:bg-slate-700 hover:bg-slate-700 active:shadow-none disabled:pointer-events-none disabled:opacity-50 disabled:shadow-none" type="button">
+                      <button onclick="document.getElementById('projects').scrollIntoView({behavior: 'smooth'})" class="transform translate-y-10 opacity-0 duration-500 mx-2 delay-100 hover:-translate-y-1 hover:scale-110 font-semibold rounded-md bg-gradient-to-tr from-slate-900 to-slate-800 py-3 px-5 border-b-4 border-steel-blue hover:border-blue-300 rounded text-center text-sm text-white transition-all shadow-md hover:shadow-lg focus:bg-slate-700 focus:shadow-none active:bg-slate-700 hover:bg-slate-700 active:shadow-none disabled:pointer-events-none disabled:opacity-50 disabled:shadow-none" type="button">
                         Projekte
                       </button>
 
@@ -68,22 +49,49 @@
                       </button>
                 </nav>
             </div>
-            <!-- <img src="LogoNoBackground.png" alt="" class="absolute top-50% left-50% delay-2000"> -->
+        </div>
+
+        <div class="text-white absolute bottom-0 left-0 right-0 text-center pb-10 animate-slide-up">
+          <a href="#about" class="bg-blue-500 px-2 py-1 rounded hover:bg-blue-700 font-semibold">Lass uns gemeinsam loslegen.</a>
         </div>
      </header>
+
     <div class="text-white">
         <div class="container mx-auto px-4">
-            <section id="about">
-                <h1 class="text-6xl font-semibold">Über mich</h1>
-                <p>Infos zu mir</p>
+            <section id="about" class="about-me opacity-0 translate-y-5 transition-all duration-700 ease-out h-screen">
+              <div class="translate-y-5">
+                <h1 class="text-6xl font-semibold text-center">Über mich</h1>
+                <div class="text-green-400 font-mono p-4">
+                  <div class="max-w-3xl mx-auto bg-gray-900 p-4 rounded-lg shadow-lg min-h-[500px] overflow-y-auto">
+                    <div id="output" class="whitespace-pre-wrap"></div>
+                    <div class="flex items-center mt-2">
+                      <span class="mr-2">&gt;</span>
+                      <!-- <span id="input" class="outline-none bg-transparent flex-grow" contenteditable="true"></span> -->
+                      <input id="input" type="text" class="bg-transparent border-none outline-none text-green-400 flex-grow ml-2" />
+                      <span class="cursor">█</span>
+                    </div>
+                  </div>
+                </div>
+                <!-- <p class="mt-4 text-lg">Ich bin Cooper, ein 18-jähriger Schüler, der leideschaftlich daran arbeitet, die digitale Welt zu gestalten. Mein Fokus liegt dabei auf Softwareentwicklung, Spieleentwicklung und Webdesign.</p>
+                <p>Lass uns gemeinsam etwas Großartiges schaffen! <br> Schau dir gerne mein Portfolio weiter an oder kontaktiere mich doch direkt.</p> -->
                 <!-- <div data-iframe-width="250" data-iframe-height="270" data-share-badge-id="bd7019ea-e79b-42d6-9ddd-bb71e051c6ae" data-share-badge-host="https://www.credly.com"></div><script type="text/javascript" async src="//cdn.credly.com/assets/utilities/embed.js"></script> -->
+              </div>
             </section>
-            <section id="projects">
-                <h1 class="text-6xl font-semibold">Projekte</h1>
-                <h2 class="text-2xl">Spieleentwicklung:</h2>
+            <section id="projects" class="translate-y-5 transition-all duration-700 ease-out h-screen">
+              <div class="translate-y-5">
+                <h1 class="text-6xl font-semibold text-center">Projekte</h1>
+                <h2 class="text-3xl text-center">Mobile Entwicklung:</h2>
+                <h3 class="text-xl">The MinimaList</h3>
+                <img src="Theos_Title3_Zugeschnitten.png" width="700">
+                <p>Infos zu The MinimaList</p>
+              </div>
+              
+              <div class="translate-y-5">
+                <h2 class="text-3xl text-center">Spieleentwicklung:</h2>
                 <h3 class="text-xl">Theos</h3>
-                <!-- <img src="Theos_Title3_Zugeschnitten.png" width="800"> -->
+                <img src="Theos_Title3_Zugeschnitten.png" width="700">
                 <p>Infos zu Theos</p>
+              </div>
             </section>
         </div>
     </div>
@@ -112,7 +120,23 @@
           });
         });
 
-        const words = ['Cooper Jakubke', 'Programmierer', 'Entwickler', 'Designer'];
+        document.addEventListener("DOMContentLoaded", () => {
+        const aboutMeSection = document.querySelector(".about-me");
+
+          // Text einfliegen lassen
+        const observer = new IntersectionObserver((entries) => {
+          entries.forEach(entry => {
+            if (entry.isIntersecting) {
+              entry.target.classList.remove("opacity-0", "translate-y-5");
+              entry.target.classList.add("opacity-100", "translate-y-0");
+            }
+          });
+        });
+
+        observer.observe(aboutMeSection);
+      });
+
+        const words = ['.Cooper Jakubke', '.Programmierer', '.Entwickler', '.Designer'];
         let i = 0;
         let j = 0;
         let currentWord = "";
@@ -123,7 +147,7 @@
           if (isDeleting) {
             document.getElementById("typewriter").textContent = currentWord.substring(0, j-1);
             j--;
-            if (j == 0) {
+            if (j == 1) {
               isDeleting = false;
               i++;
               if (i == words.length) {
@@ -143,6 +167,55 @@
         }
 
         type();
+
+    document.addEventListener("DOMContentLoaded", function () {
+    const input = document.getElementById("input");
+    const output = document.getElementById("output");
+    const terminal = document.getElementById("terminal");
+
+    //input.focus();
+    terminal.addEventListener("click", () => input.focus());
+
+    input.addEventListener("keydown", function (event) {
+        if (event.key === "Enter") {
+            event.preventDefault();
+            const command = input.value.trim();
+            if (command !== "") {
+                processCommand(command);
+                input.value = "";
+            }
+        }
+    });
+
+    function processCommand(command) {
+        const response = interpretCommand(command);
+        output.innerHTML += `<div>&gt; ${command}</div>`;
+        if (response) {
+            output.innerHTML += `<div>${response}</div>`;
+        }
+        terminal.scrollTop = terminal.scrollHeight; // Scrollt automatisch nach unten
+    }
+
+    function interpretCommand(command) {
+        switch (command.toLowerCase()) {
+            case "help":
+                return "Verfügbare Befehle: about, projects, contact, clear";
+            case "about":
+                return "Ich bin Cooper Jakubke, Softwareentwickler mit Fokus auf Web & Game Development.";
+            case "projects":
+                return "1. Pixel Drive - Rennspiel mit Pixelart\n2. Skyjo Online - Multiplayer-Spiel\n3. Smart Mirror - Smarte Spiegeloberfläche";
+            case "contact":
+                return "E-Mail: cooper@example.com\nGitHub: github.com/cooperjakubke";
+            case "clear":
+                output.innerHTML = "";
+                return "";
+            default:
+                return "Befehl nicht erkannt. Tippe 'help' für eine Liste der Befehle.";
+        }
+    }
+});
+
+
       </script>
     <script type="module" src="./three.js">
 
