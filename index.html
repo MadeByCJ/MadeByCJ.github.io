@@ -52,7 +52,7 @@
         </div>
 
         <div class="text-white absolute bottom-0 left-0 right-0 text-center pb-10 animate-slide-up">
-          <a href="#about" class="bg-blue-500 px-2 py-1 rounded hover:bg-blue-700 font-semibold">Lass uns gemeinsam loslegen.</a>
+          <a href="#about" class="bg-blue-500 px-2 py-1 rounded hover:bg-blue-700 font-semibold">Lass uns gemeinsam etwas Schaffen.</a>
         </div>
      </header>
 
@@ -62,7 +62,7 @@
               <div class="translate-y-5">
                 <h1 class="text-6xl font-semibold text-center">Über mich</h1>
                 <div class="text-green-400 font-mono p-4">
-                  <div class="max-w-3xl mx-auto bg-gray-900 p-4 rounded-lg shadow-lg min-h-[500px] overflow-y-auto">
+                  <div class="max-w-3xl mx-auto bg-gray-900 p-4 rounded-lg shadow-lg min-h-[500px] max-h-[700px] overflow-y-auto">
                     <div id="output" class="whitespace-pre-wrap"></div>
                     <div class="flex items-center mt-2">
                       <span class="mr-2">&gt;</span>
@@ -168,52 +168,50 @@
 
         type();
 
-    document.addEventListener("DOMContentLoaded", function () {
-    const input = document.getElementById("input");
-    const output = document.getElementById("output");
-    const terminal = document.getElementById("terminal");
+        document.addEventListener("DOMContentLoaded", function () {
+        const input = document.getElementById("input");
+        const output = document.getElementById("output");
 
-    //input.focus();
-    terminal.addEventListener("click", () => input.focus());
+        output.innerHTML += `<div>Nutze folgende Befehle: "hilfe", "hallo", "über mich", "projekte", "kontakt" oder "clear".</div>`;
 
-    input.addEventListener("keydown", function (event) {
-        if (event.key === "Enter") {
-            event.preventDefault();
-            const command = input.value.trim();
-            if (command !== "") {
-                processCommand(command);
+        input.addEventListener("keydown", function (event) {
+            if (event.key === "Enter") {
+                event.preventDefault();
+                const command = input.value.trim().toLowerCase();
+
+                if (command !== "") {
+                    output.innerHTML += `<div>> ${command}</div>`;
+
+                    switch (command) {
+                        case "hilfe":
+                            output.innerHTML += `<div>Schreibe in dieser Konsole Befehle, um mehr über mich zu erfahren. Nutze Befehele wie: "über mich", "projekte" oder "kontakt".</div>`;
+                            break;
+                        case "hallo":
+                            output.innerHTML += `<div>Hallo! Schön, dass du hier bist.</div>`;
+                            break;
+                        case "über mich":
+                            output.innerHTML += `<div>Ich bin Cooper Jakubke, ein leidenschaftlicher Entwickler mit Fokus auf Software- und Spieleentwicklung.</div>`;
+                            break;
+                        case "projekte":
+                            output.innerHTML += `<div>Hier sind einige meiner Projekte: Pixel Drive, ein Age-of-Empires-ähnliches Pixelspiel und eine kostenlose Minimalismus-App.</div>`;
+                            break;
+                        case "kontakt":
+                            output.innerHTML += `<div>Du kannst mich über E-Mail oder LinkedIn kontaktieren.</div>`;
+                            break;
+                        case "clear":
+                            output.innerHTML = "";
+                            break;
+                        default:
+                            output.innerHTML += `<div>Unbekannter Befehl: ${command}</div>`;
+                    }
+
+                    output.scrollTop = output.scrollHeight;
+                }
                 input.value = "";
             }
-        }
+        });
     });
 
-    function processCommand(command) {
-        const response = interpretCommand(command);
-        output.innerHTML += `<div>&gt; ${command}</div>`;
-        if (response) {
-            output.innerHTML += `<div>${response}</div>`;
-        }
-        terminal.scrollTop = terminal.scrollHeight; // Scrollt automatisch nach unten
-    }
-
-    function interpretCommand(command) {
-        switch (command.toLowerCase()) {
-            case "help":
-                return "Verfügbare Befehle: about, projects, contact, clear";
-            case "about":
-                return "Ich bin Cooper Jakubke, Softwareentwickler mit Fokus auf Web & Game Development.";
-            case "projects":
-                return "1. Pixel Drive - Rennspiel mit Pixelart\n2. Skyjo Online - Multiplayer-Spiel\n3. Smart Mirror - Smarte Spiegeloberfläche";
-            case "contact":
-                return "E-Mail: cooper@example.com\nGitHub: github.com/cooperjakubke";
-            case "clear":
-                output.innerHTML = "";
-                return "";
-            default:
-                return "Befehl nicht erkannt. Tippe 'help' für eine Liste der Befehle.";
-        }
-    }
-});
 
 
       </script>
