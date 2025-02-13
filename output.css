@@ -690,6 +690,24 @@ video {
   transform: translate(var(--tw-translate-x), var(--tw-translate-y)) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y));
 }
 
+@keyframes gradientShift {
+  0% {
+    background: linear-gradient(to right, #3E7CB1, #011638);
+  }
+
+  50% {
+    background: linear-gradient(to right, #81A4CD, #3E7CB1);
+  }
+
+  100% {
+    background: linear-gradient(to right, #3E7CB1, #011638);
+  }
+}
+
+.animate-gradient-shift {
+  animation: gradientShift 3s ease-in-out infinite alternate;
+}
+
 @keyframes slideIn {
   0% {
     transform: translateX(-20%);
@@ -720,6 +738,24 @@ video {
 
 .animate-slide-up {
   animation: slideUp 1s ease-out forwards;
+}
+
+@keyframes pulseGlow {
+  0% {
+    box-shadow: 0 0 10px rgba(70, 130, 180, 0.5);
+  }
+
+  50% {
+    box-shadow: 0 0 20px rgba(70, 130, 180, 0.8);
+  }
+
+  100% {
+    box-shadow: 0 0 10px rgba(70, 130, 180, 0.5);
+  }
+}
+
+.animate-pulse-glow {
+  animation: pulseGlow 1.5s infinite alternate ease-in-out;
 }
 
 .items-center {
@@ -767,11 +803,6 @@ video {
   border-color: rgb(62 124 177 / var(--tw-border-opacity, 1));
 }
 
-.bg-blue-500 {
-  --tw-bg-opacity: 1;
-  background-color: rgb(59 130 246 / var(--tw-bg-opacity, 1));
-}
-
 .bg-gray-800 {
   --tw-bg-opacity: 1;
   background-color: rgb(31 41 55 / var(--tw-bg-opacity, 1));
@@ -802,6 +833,12 @@ video {
   --tw-gradient-stops: var(--tw-gradient-from), var(--tw-gradient-to);
 }
 
+.from-steel-blue {
+  --tw-gradient-from: #3E7CB1 var(--tw-gradient-from-position);
+  --tw-gradient-to: rgb(62 124 177 / 0) var(--tw-gradient-to-position);
+  --tw-gradient-stops: var(--tw-gradient-from), var(--tw-gradient-to);
+}
+
 .from-30\% {
   --tw-gradient-from-position: 30%;
 }
@@ -809,6 +846,10 @@ video {
 .via-indigo-600 {
   --tw-gradient-to: rgb(79 70 229 / 0)  var(--tw-gradient-to-position);
   --tw-gradient-stops: var(--tw-gradient-from), #4f46e5 var(--tw-gradient-via-position), var(--tw-gradient-to);
+}
+
+.to-blue-600 {
+  --tw-gradient-to: #2563eb var(--tw-gradient-to-position);
 }
 
 .to-slate-800 {

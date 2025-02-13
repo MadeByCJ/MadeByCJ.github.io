@@ -8,6 +8,8 @@ module.exports = {
         'slide-in': 'slideIn 1s ease-out forwards', // Definiert die Animation
         'slide-up': 'slideUp 1s ease-out forwards',
         slide: 'slide 5s ease-in-out infinite',
+        'pulse-glow': 'pulseGlow 1.5s infinite alternate ease-in-out',
+        'gradient-shift': 'gradientShift 3s ease-in-out infinite alternate',
       },
       keyframes: {
         slideIn: {
@@ -39,6 +41,16 @@ module.exports = {
           '0%, 20%': { opacity: 1, transform: 'translateY(0)' },
           '40%, 80%': { opacity: 0, transform: 'translateY(-20px)' },
           '100%': { opacity: 1, transform: 'translateY(0)' },
+        },
+        pulseGlow: {
+          '0%': { boxShadow: '0 0 10px rgba(70, 130, 180, 0.5)' },
+          '50%': { boxShadow: '0 0 20px rgba(70, 130, 180, 0.8)' },
+          '100%': { boxShadow: '0 0 10px rgba(70, 130, 180, 0.5)' },
+        },
+        gradientShift: { // NEUE KEYFRAMES
+          '0%': { background: 'linear-gradient(to right, #3E7CB1, #011638)' },
+          '50%': { background: 'linear-gradient(to right, #81A4CD, #3E7CB1)' },
+          '100%': { background: 'linear-gradient(to right, #3E7CB1, #011638)' },
         },
         },
       colors:{
