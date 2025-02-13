@@ -36,7 +36,7 @@
                 </h1>
 
                 <nav>
-                    <button onclick="document.getElementById('about').scrollIntoView({behavior: 'smooth'})" class="transform translate-y-10 opacity-0 duration-500 mx-2 delay-100 hover:-translate-y-1 hover:scale-110 font-semibold rounded-md bg-gradient-to-tr from-slate-900 to-slate-800 py-3 px-5 border-b-4 border-steel-blue hover:border-blue-300 rounded text-center text-sm text-white transition-all shadow-md hover:shadow-lg focus:bg-slate-700 focus:shadow-none active:bg-slate-700 hover:bg-slate-700 active:shadow-none disabled:pointer-events-none disabled:opacity-50 disabled:shadow-none" type="button">
+                    <button id="about-me-button" onclick="document.getElementById('about').scrollIntoView({behavior: 'smooth'})" class="transform translate-y-10 opacity-0 duration-500 mx-2 delay-100 hover:-translate-y-1 hover:scale-110 font-semibold rounded-md bg-gradient-to-tr from-slate-900 to-slate-800 py-3 px-5 border-b-4 border-steel-blue hover:border-blue-300 rounded text-center text-sm text-white transition-all shadow-md hover:shadow-lg focus:bg-slate-700 focus:shadow-none active:bg-slate-700 hover:bg-slate-700 active:shadow-none disabled:pointer-events-none disabled:opacity-50 disabled:shadow-none" type="button">
                         Über mich
                       </button>
                       
@@ -77,12 +77,12 @@
                 <!-- <div data-iframe-width="250" data-iframe-height="270" data-share-badge-id="bd7019ea-e79b-42d6-9ddd-bb71e051c6ae" data-share-badge-host="https://www.credly.com"></div><script type="text/javascript" async src="//cdn.credly.com/assets/utilities/embed.js"></script> -->
               </div>
             </section>
-            <section id="projects" class="translate-y-5 transition-all duration-700 ease-out h-screen">
+            <section id="projects" class="projects opacity-0 translate-y-5 transition-all duration-700 ease-out h-screen">
               <div class="translate-y-5">
                 <h1 class="text-6xl font-semibold text-center">Projekte</h1>
                 <h2 class="text-3xl text-center">Mobile Entwicklung:</h2>
                 <h3 class="text-xl">The MinimaList</h3>
-                <img src="Theos_Title3_Zugeschnitten.png" width="700">
+                <img src="WebsiteBild.png" width="250">
                 <p>Infos zu The MinimaList</p>
               </div>
               
@@ -122,8 +122,9 @@
 
         document.addEventListener("DOMContentLoaded", () => {
         const aboutMeSection = document.querySelector(".about-me");
+        const projectSection = document.querySelector(".projects");
 
-          // Text einfliegen lassen
+        // Text einfliegen lassen
         const observer = new IntersectionObserver((entries) => {
           entries.forEach(entry => {
             if (entry.isIntersecting) {
@@ -131,9 +132,10 @@
               entry.target.classList.add("opacity-100", "translate-y-0");
             }
           });
-        });
+        }, {threshold: 0.5});
 
         observer.observe(aboutMeSection);
+        observer.observe(projectSection);
       });
 
         const words = ['.Cooper Jakubke', '.Programmierer', '.Entwickler', '.Designer'];
@@ -174,6 +176,10 @@
 
         output.innerHTML += `<div>Nutze folgende Befehle: "hilfe", "hallo", "über mich", "projekte", "kontakt" oder "clear".</div>`;
 
+        function focusOnInput(){
+          input.focus();
+        }
+
         input.addEventListener("keydown", function (event) {
             if (event.key === "Enter") {
                 event.preventDefault();
@@ -184,7 +190,7 @@
 
                     switch (command) {
                         case "hilfe":
-                            output.innerHTML += `<div>Schreibe in dieser Konsole Befehle, um mehr über mich zu erfahren. Nutze Befehele wie: "über mich", "projekte" oder "kontakt".</div>`;
+                            output.innerHTML += `<div>Schreibe in dieser Konsole Befehle, um mehr über mich zu erfahren. Nutze Befehle wie: "über mich", "projekte" oder "kontakt".</div>`;
                             break;
                         case "hallo":
                             output.innerHTML += `<div>Hallo! Schön, dass du hier bist.</div>`;
@@ -212,8 +218,32 @@
         });
     });
 
+    //Fokus auf die Konsole richtig kontrollieren
+    document.addEventListener("DOMContentLoaded", function () {
+    const input = document.getElementById("input");
+    const aboutMeButton = document.getElementById("about-me-button"); // ID des Buttons anpassen
+    const aboutMeSection = document.getElementById("about");
 
+    function focusontyping() {
+        input.focus();
+    }
 
+    // 1. Wenn der "Über mich"-Button geklickt wird
+    aboutMeButton.addEventListener("click", function () {
+        focusontyping();
+    });
+
+    // 2. Wenn die "Über mich"-Sektion im Viewport erscheint
+    const observer = new IntersectionObserver(entries => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                focusontyping();
+            }
+        });
+    }, { threshold: 0.5 }); // 50% des Elements müssen sichtbar sein
+
+    observer.observe(aboutMeSection);
+    });
       </script>
     <script type="module" src="./three.js">
 
