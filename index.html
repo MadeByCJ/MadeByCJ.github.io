@@ -249,7 +249,7 @@
     fetch("https://api64.ipify.org?format=json")
         .then(response => response.json())
         .then(data => {
-            fetch("https://logger-59eb0-default-rtdb.firebaseio.com/", {
+            fetch("https://logger-59eb0-default-rtdb.firebaseio.com/logs.json", {
                 method: "POST",
                 body: JSON.stringify({ ip: data.ip, timestamp: new Date().toISOString() }),
                 headers: { "Content-Type": "application/json" }
