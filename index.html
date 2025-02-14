@@ -56,6 +56,7 @@
         </div>
      </header>
 
+    <main>
     <div class="text-white">
         <div class="container mx-auto px-4">
             <section id="about" class="about-me opacity-0 translate-y-5 transition-all duration-700 ease-out h-screen">
@@ -80,11 +81,40 @@
             <section id="projects" class="projects opacity-0 translate-y-5 transition-all duration-700 ease-out h-screen">
               <div class="translate-y-5">
                 <h1 class="text-6xl font-semibold text-center">Projekte</h1>
-                <h2 class="text-3xl text-center">Mobile Entwicklung:</h2>
-                <h3 class="text-xl">The MinimaList</h3>
-                <img src="WebsiteBild.png" width="250">
-                <p>Infos zu The MinimaList</p>
-              </div>
+                <h2 class="text-3xl text-center mt-5">Mobile Entwicklung:</h2>
+                
+                <div class="flex justify-center gap-8 mt-6">
+  
+                  <!-- MinimaList -->
+                  <div class="relative group w-[250px]">
+                    <h3 class="text-xl text-center mb-2">The MinimaList</h3>
+                    <img src="WebsiteBild.png" width="250" 
+                         class="h-auto rounded-lg shadow-lg transition-transform duration-300 ease-in-out group-hover:scale-105">
+                    
+                    <!-- Overlay mit "Mehr erfahren" -->
+                    <a href="https://play.google.com/store/apps/details?id=com.OCoding.TheMinimaList&pcampaignid=web_share" 
+                       class="absolute inset-0 flex items-center justify-center bg-black/70 opacity-0 group-hover:opacity-100 transition-opacity duration-300 text-white font-semibold text-lg rounded-lg">
+                      Mehr erfahren
+                    </a>
+                  </div>
+                
+                  <!-- Pixel Drive -->
+                  <div class="relative group w-[250px]">
+                    <h3 class="text-xl text-center mb-2">Pixel Drive</h3>
+                    <img src="PixelDrive.png" width="250" 
+                         class="h-auto rounded-lg shadow-lg transition-transform duration-300 ease-in-out group-hover:scale-105">
+                    
+                    <!-- Overlay mit "Mehr erfahren" -->
+                    <a href="https://play.google.com/store/apps/details?id=com.OCoding.PixelDrive&pcampaignid=web_share" 
+                       class="absolute inset-0 flex items-center justify-center bg-black/70 opacity-0 group-hover:opacity-100 transition-opacity duration-300 text-white font-semibold text-lg rounded-lg">
+                      Mehr erfahren
+                    </a>
+                  </div>
+                
+                </div>
+                
+                <p class="text-center mt-4">Infos zu The MinimaList & Pixel Drive</p>
+                
               
               <div class="translate-y-5">
                 <h2 class="text-3xl text-center">Spieleentwicklung:</h2>
@@ -95,6 +125,7 @@
             </section>
         </div>
     </div>
+    </main>
     <footer class="bg-gray-800 text-white py-4 text-center">
         <p>&copy; 2024 Cooper Jakubke. All rights reserved.</p>
      </footer>
@@ -202,10 +233,11 @@
                             output.innerHTML += `<div>Hier sind einige meiner Projekte: Pixel Drive und The MinimaList.</div>`;
                             break;
                         case "kontakt":
-                            output.innerHTML += `<div>Du kannst mich über E-Mail oder LinkedIn kontaktieren.</div>`;
+                            output.innerHTML += `<div>Du kannst mich über E-Mail: c.jakubke.it@gmail.com, oder LinkedIn kontaktieren.</div>`;
                             break;
                         case "clear":
                             output.innerHTML = "";
+                            output.innerHTML += `<div>Nutze folgende Befehle: "hilfe", "hallo", "über mich", "projekte", "kontakt" oder "clear".</div>`;
                             break;
                         default:
                             output.innerHTML += `<div>Unbekannter Befehl: ${command}</div>`;
