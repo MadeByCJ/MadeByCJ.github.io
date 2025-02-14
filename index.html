@@ -63,7 +63,7 @@
               <div class="translate-y-5">
                 <h1 class="text-6xl font-semibold text-center">Über mich</h1>
                 <div class="text-green-400 font-mono p-4">
-                  <div class="max-w-3xl mx-auto bg-gray-900 p-4 rounded-lg shadow-lg min-h-[500px] max-h-[700px] overflow-y-auto">
+                  <div class="max-w-3xl mx-auto bg-gray-900 p-4 rounded-lg shadow-lg min-h-[600px] max-h-[700px] overflow-y-auto">
                     <div id="output" class="whitespace-pre-wrap"></div>
                     <div class="flex items-center mt-2">
                       <span class="mr-2">&gt;</span>
@@ -83,44 +83,60 @@
                 <h1 class="text-6xl font-semibold text-center">Projekte</h1>
                 <h2 class="text-3xl text-center mt-5">Mobile Entwicklung:</h2>
                 
-                <div class="flex justify-center gap-8 mt-6">
+                <div class="flex justify-center items-center gap-12 mt-6">
   
-                  <!-- MinimaList -->
+                  <!-- MinimaList Text -->
+                  <div class="max-w-[250px] text-right">
+                    <p>The MinimaList ist eine App, die sich auf das Wesentliche konzentriert – keine Ablenkungen, keine unnötigen Funktionen. Mit einem minimalistischen Design und einer intuitiven Bedienung hilft sie dir, deine Aufgaben und Gedanken klar zu strukturieren. Einfach, elegant und effizient.</p>
+                  </div>
+                
+                  <!-- MinimaList Bild -->
                   <div class="relative group w-[250px]">
-                    <h3 class="text-xl text-center mb-2">The MinimaList</h3>
+                    <h3 class="text-xl text-center mb-4"><u>The MinimaList</u></h3>
                     <img src="WebsiteBild.png" width="250" 
                          class="h-auto rounded-lg shadow-lg transition-transform duration-300 ease-in-out group-hover:scale-105">
                     
                     <!-- Overlay mit "Mehr erfahren" -->
                     <a href="https://play.google.com/store/apps/details?id=com.OCoding.TheMinimaList&pcampaignid=web_share" 
-                       class="absolute inset-0 flex items-center justify-center bg-black/70 opacity-0 group-hover:opacity-100 transition-opacity duration-300 text-white font-semibold text-lg rounded-lg">
+                       class="absolute inset-0 flex items-center justify-center bg-black/70 opacity-0 group-hover:opacity-100 transition-opacity duration-300 text-white font-semibold text-lg rounded-lg" target="_blank">
                       Mehr erfahren
                     </a>
                   </div>
                 
-                  <!-- Pixel Drive -->
+                  <!-- Pixel Drive Bild -->
                   <div class="relative group w-[250px]">
-                    <h3 class="text-xl text-center mb-2">Pixel Drive</h3>
+                    <h3 class="text-xl text-center mb-4"><u>Pixel Drive</u></h3>
                     <img src="PixelDrive.png" width="250" 
                          class="h-auto rounded-lg shadow-lg transition-transform duration-300 ease-in-out group-hover:scale-105">
                     
                     <!-- Overlay mit "Mehr erfahren" -->
                     <a href="https://play.google.com/store/apps/details?id=com.OCoding.PixelDrive&pcampaignid=web_share" 
-                       class="absolute inset-0 flex items-center justify-center bg-black/70 opacity-0 group-hover:opacity-100 transition-opacity duration-300 text-white font-semibold text-lg rounded-lg">
+                       class="absolute inset-0 flex items-center justify-center bg-black/70 opacity-0 group-hover:opacity-100 transition-opacity duration-300 text-white font-semibold text-lg rounded-lg" target="_blank">
                       Mehr erfahren
                     </a>
                   </div>
                 
+                  <!-- Pixel Drive Text -->
+                  <div class="max-w-[250px] text-left">
+                    <p>Pixel Drive ist ein actiongeladenes<br>2D-Rennspiel mit Retro-Pixel-Ästhetik.<br>
+                      Weiche Hindernissen aus, meistere herausfordernde<br>Strecken und perfektioniere deine Fahrkünste.<br>
+                      Ein dynamisches Gameplay trifft auf nostalgischen Charme – ideal<br>für alle, die schnelle Reflexe und kreative Level lieben.</p>
+                  </div>
+                
                 </div>
                 
-                <p class="text-center mt-4">Infos zu The MinimaList & Pixel Drive</p>
-                
-              
-              <div class="translate-y-5">
+                <p class="text-center mt-5">Besuche mich im <a href="https://play.google.com/store/apps/dev?id=8822915279601651065" class="bg-gradient-to-tr from-steel-blue to-blue-600 px-1 py-0.5 rounded animate-pulse-glow" target="_blank">Play Store</a></p>
+              </div>
+              <!-- <div class="translate-y-5">
                 <h2 class="text-3xl text-center">Spieleentwicklung:</h2>
                 <h3 class="text-xl">Theos</h3>
                 <img src="Theos_Title3_Zugeschnitten.png" width="700">
                 <p>Infos zu Theos</p>
+              </div> -->
+            </section>
+            <section id="contact" class="contact opacity-0 translate-y-5 transition-all duration-700 ease-out h-screen">
+              <div class="translate-y-5">
+                <h1 class="text-6xl font-semibold text-center">Kontakt</h1>
               </div>
             </section>
         </div>
@@ -154,6 +170,7 @@
         document.addEventListener("DOMContentLoaded", () => {
         const aboutMeSection = document.querySelector(".about-me");
         const projectSection = document.querySelector(".projects");
+        const contactSection = document.querySelector(".contact");
 
         // Text einfliegen lassen
         const observer = new IntersectionObserver((entries) => {
@@ -167,6 +184,7 @@
 
         observer.observe(aboutMeSection);
         observer.observe(projectSection);
+        observer.observe(contactSection);
       });
 
         const words = ['.Cooper Jakubke', '.Programmierer', '.Entwickler', '.Designer'];
