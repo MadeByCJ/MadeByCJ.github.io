@@ -829,6 +829,10 @@ video {
   row-gap: 1.5rem;
 }
 
+.justify-self-end {
+  justify-self: end;
+}
+
 .overflow-hidden {
   overflow: hidden;
 }
