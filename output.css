@@ -1384,6 +1384,14 @@ video {
     font-size: 1.875rem;
     line-height: 2.25rem;
   }
+
+  .md\:opacity-0 {
+    opacity: 0;
+  }
+
+  .md\:opacity-100 {
+    opacity: 1;
+  }
 }
 
 @media (min-width: 1024px) {
