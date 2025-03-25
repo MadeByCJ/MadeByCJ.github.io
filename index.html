@@ -54,6 +54,10 @@
                 <button onclick="document.getElementById('contact').scrollIntoView({behavior: 'smooth'})" class="transform translate-y-10 opacity-0 duration-500 mx-2 delay-100 hover:-translate-y-1 hover:scale-110 font-semibold rounded-md bg-gradient-to-tr from-slate-900 to-slate-800 py-3 px-5 border-b-4 border-steel-blue hover:border-blue-300 rounded text-center text-sm text-white transition-all shadow-md hover:shadow-lg focus:bg-slate-700 focus:shadow-none active:bg-slate-700 hover:bg-slate-700 active:shadow-none disabled:pointer-events-none disabled:opacity-50 disabled:shadow-none" type="button">
                   Kontakt
                 </button>
+
+                <button onclick="document.getElementById('impressum').scrollIntoView({behavior: 'smooth'})" class="transform translate-y-10 opacity-0 duration-500 mx-2 delay-100 hover:-translate-y-1 hover:scale-110 font-semibold rounded-md bg-gradient-to-tr from-slate-900 to-slate-800 py-3 px-5 border-b-4 border-steel-blue hover:border-blue-300 rounded text-center text-sm text-white transition-all shadow-md hover:shadow-lg focus:bg-slate-700 focus:shadow-none active:bg-slate-700 hover:bg-slate-700 active:shadow-none disabled:pointer-events-none disabled:opacity-50 disabled:shadow-none" type="button">
+                  Impressum
+                </button>
               </nav>
           </div>
       </div>
@@ -161,7 +165,7 @@
                   </div>
             
                   <!-- Fortschrittsbalken (schmaler für Mobile) -->
-                  <div class="relative rounded-lg shadow-md bg-gray-800 p-4 md:p-6 text-white">
+                  <div class="relative rounded-lg shadow-md bg-gray-800 p-4 md:p-6 text-white duration-300 hover:scale-105 hover:shadow-xl">
                     <div class="flex justify-between">
                       <h2 class="text-lg md:text-xl">C, C++, C#</h2>
                       <i class="fa-solid fa-c text-blue-500 text-3xl md:text-4xl"></i>
@@ -172,7 +176,7 @@
                     </div>
                   </div>
             
-                  <div class="relative rounded-lg shadow-md bg-gray-800 p-4 md:p-6 text-white">
+                  <div class="relative rounded-lg shadow-md bg-gray-800 p-4 md:p-6 text-white duration-300 hover:scale-105 hover:shadow-xl">
                     <div class="flex justify-between">
                       <h2 class="text-lg md:text-xl">Websites</h2>
                       <i class="fa-solid fa-pen-to-square text-yellow-500 text-3xl md:text-4xl"></i>
@@ -183,7 +187,7 @@
                     </div>
                   </div>
             
-                  <div class="relative rounded-lg shadow-md bg-gray-800 p-4 md:p-6 text-white">
+                  <div class="relative rounded-lg shadow-md bg-gray-800 p-4 md:p-6 text-white duration-300 hover:scale-105 hover:shadow-xl">
                     <div class="flex justify-between">
                       <h2 class="text-lg md:text-xl">Datenbanken</h2>
                       <i class="fa-solid fa-table text-green-500 text-3xl md:text-4xl"></i>
@@ -194,7 +198,7 @@
                     </div>
                   </div>
             
-                  <div class="relative rounded-lg shadow-md bg-gray-800 p-4 md:p-6 text-white">
+                  <div class="relative rounded-lg shadow-md bg-gray-800 p-4 md:p-6 text-white duration-300 hover:scale-105 hover:shadow-xl">
                     <div class="flex justify-between">
                       <h2 class="text-lg md:text-xl">Python, Java</h2>
                       <i class="fa-brands fa-python text-blue-500 text-3xl md:text-4xl"></i>
@@ -205,7 +209,7 @@
                     </div>
                   </div>
             
-                  <div class="relative rounded-lg shadow-md bg-gray-800 p-4 md:p-6 text-white">
+                  <div class="relative rounded-lg shadow-md bg-gray-800 p-4 md:p-6 text-white duration-300 hover:scale-105 hover:shadow-xl">
                     <div class="flex justify-between">
                       <h2 class="text-lg md:text-xl">Apps</h2>
                       <i class="fa-solid fa-mobile text-yellow-500 text-3xl md:text-4xl"></i>
@@ -220,7 +224,7 @@
                     
                   </div>
 
-                  <div class="relative rounded-lg shadow-md bg-gray-800 p-4 md:p-6 text-white">
+                  <div class="relative rounded-lg shadow-md bg-gray-800 p-4 md:p-6 text-white duration-300 hover:scale-105 hover:shadow-xl">
                     <div class="flex justify-between">
                       <h2 class="text-lg md:text-xl">HTML, CSS, Tailwind</h2>
                       <i class="fa-brands fa-css text-blue-500 text-3xl md:text-4xl"></i>
@@ -252,13 +256,32 @@
                     <a href="https://www.linkedin.com/in/cooper-jakubke-2a3701341" target="_blank" class="text-blue-300 hover:underline">LinkedIn</a>
                   </div>
                 </div>
-              </div>          
+              </div>  
+            </section>
+
+            <section id="impressum" class="impressum transition-all duration-700 ease-out h-screen">
+              <div class="translate-y-5">
+                <h1 class="text-6xl font-semibold text-center">Impressum</h1>
+              </div>
+              <div class="translate-y-10">
+                <p>Cooper Jakubke</p>
+                <p>Waldecker Str. 7</p>
+                <p>35104 Lichtenfels</p>
+                <br>
+                <p>E-Mail: <a href="mailto:c.jakubke.it@gmail.com" class="text-blue-500 hover:underline">
+                  c.jakubke.it@gmail.com
+                </a></p>
+                <br>
+                <p><strong>Verantwortlich für den Inhalt gemäß § 18 Abs. 2 MStV:</strong></p>
+                <p>Cooper Jakubke</p>
+              </div>
             </section>
         </div>
     </div>
     </main>
     <footer class="bg-gray-800 text-white py-4 text-center">
         <p>&copy; 2024 Cooper Jakubke. All rights reserved.</p>
+        <a href="#impressum" class="text-gray-500 hover:underline">Impressum</a>
      </footer>
      <script>
         document.activeElement?.blur(); // Entfernt den Fokus vom aktiven Element
@@ -287,6 +310,7 @@
         const projectSection = document.querySelector(".projects");
         const contactSection = document.querySelector(".contact");
         const skillsSection = document.querySelector(".skills");
+        const impressumSection = document.querySelector(".impressum");
 
         // Text einfliegen lassen
         const observer = new IntersectionObserver((entries) => {
@@ -302,6 +326,7 @@
         observer.observe(projectSection);
         observer.observe(contactSection);
         observer.observe(skillsSection);
+        observer.observe(impressumSection);
       });
 
         const words = ['.Cooper Jakubke', '.Programmierer', '.Entwickler', '.Designer'];
